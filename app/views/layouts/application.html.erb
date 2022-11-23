@@ -10,6 +10,21 @@
   </head>
 
   <body>
+  <header class="border-none">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+    <%# <div class="container"> %>
+      <%= link_to "Blog", root_path, class: "navbar-brand ml-5" %>
+      <ul class="left ml-5">
+        <li>
+          <%= link_to "Articles", articles_path%>
+        </li>
+      </ul>
+    <%# </div> %>
+  </nav> 
+  </header>
+
+  <div class="container">
     <%= yield %>
+  </div>
   </body>
 </html>

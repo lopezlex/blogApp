@@ -1,38 +1,20 @@
-<h1><%= @article.title %></h1>
+<div class="container mt-5">
+  <div class="row mb-3">
+    <div class="col-9">
+      <h1><%= @article.title %></h1>
+      <p><%= @article.body %></p>
+    </div>
+    <div class="col text-right">
+      <%= link_to "Edit", edit_article_path(@article) %>
+      <%= link_to "Destroy", article_path(@article), method: :delete, data: {confirm: 'Are you sure?'} %>
+    </div>
+  </div>
+</div>
 
-<p><%= @article.body %></p>
-
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li><%= link_to "Destroy", article_path(@article), method: :delete, data: {confirm: 'Are you sure?'} %></li>
-</ul>
-
-<h2>Comments</h2>
-<% @article.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
-
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-<% end %>
+<% if @article.comments.present? %>
+  <h2>Comments</h2>
+  <%= render @article.comments %>
+<%end %>
 
 <h2>Add comment</h2>
-<%= form_with model: [@article, @article.comments.build] do |form|%>
-  <p>
-    <%= form.label :commenter%><br>
-    <%= form.text_field :commenter %>
-  </p>
-
-  <p>
-    <%= form.label :body%><br>
-    <%= form.text_area :body %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-<%end%>
+<%= render "comments/form" %>
