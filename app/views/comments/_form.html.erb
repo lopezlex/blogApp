@@ -1,7 +1,8 @@
 
-<div class="card">
-  <div class="card-body">
-    <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+
+<%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+  <div class="card">
+    <div class="card-body">
       <div class="form-group">
         <%= form.label :commenter %><br>
         <%= form.text_field :commenter %>
@@ -17,6 +18,7 @@
       <div class="form-group">
         <%= form.submit %>
       </div>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
+  

@@ -3,7 +3,7 @@
     <div class="list-group-item">
       <strong><%= comment.commenter %></strong>
       <span class="text-muted"><%= comment.body %></span>
-      <span class="float-right"><%= link_to "Destroy Comment", [comment.article, comment], method: :delete, data: {confirm: 'Are you sure?'} %></span>
+      <span class="float-right"><%= link_to "Destroy Comment", [comment.article, comment], method: :delete, data: {confirm: 'Are you sure?'} %><i class="fa fa-trash"></i></span>
     </div>
   </div>
 <% end %>

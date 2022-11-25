@@ -42,7 +42,7 @@ $secondary: $dark-gray;
 // Header and Nav
 
 header {
-	background-color: $primary;
+	// background-color: $primary;
 	padding: 0.5rem;
 	margin-bottom: 3rem;
 
@@ -422,7 +422,8 @@ aside {
 // Forms
 
 form:not([class="button_to"]) {
-	max-width: 400px;
+	// max-width: 400px;
+	width: 100%;
 	margin-top: 1.5rem;
 
   label {
